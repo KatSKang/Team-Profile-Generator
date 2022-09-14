@@ -132,7 +132,7 @@ function addTeam() {
                     return addIntern();
                 case "Done adding team members":
                     console.log(teamData);
-                    generateHTML(teamData);
+                    createCards(teamData);
             }
         })
 }
@@ -168,7 +168,7 @@ function addIntern() {
 
 // Creates the profile cards to be inserted into HTML
 function createCards(team) {
-    let cardHTML = '';
+    var cardHTML = '';
     for(let i = 0; i < teamData.length; i++)  {
         if (team[i].getRole() === 'Manager'){
             cardHTML += `
@@ -216,12 +216,12 @@ function createCards(team) {
                         </div>
                     </div>`
         }
-    return cardHTML;
+    generateHTML(cardHTML);
     };
 };
 
-function generateHTML(team){
-   let indexHTML = `
+function generateHTML(cardHTML){
+   var indexHTML = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -241,11 +241,12 @@ function generateHTML(team){
         </div>
         <div class="container">
             <div class="row justify-content-center" id="insert-cards">
-               ${createCards(team)}
+               ${cardHTML}
         </div>
     </body>
     </html>
     `
+    console.log(cardHTML);
     return writeToFile(indexHTML);
 }
 
