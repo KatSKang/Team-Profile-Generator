@@ -1,51 +1,67 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
-const generatedTeam = [];
+// Array where the entered team info will be stored
+let generatedTeam = [];
 
 const managerQuestions = [
     {
         type: "input",
-        message: "Enter the managers's name",
+        message: "Enter the managers's name:",
         name: "name",
     },
     {
         type: "input",
-        message: "Enter the managers's ID",
-        name: "ID",
+        message: "Enter the managers's ID:",
+        name: "id",
+        validate: (answer) => {
+            if (isNaN(answer)) {
+              return "please enter a number";
+            }
+            return true;
+          },
     },
     {
         type: "input",
-        message: "Enter managers's email addresss",
+        message: "Enter managers's email addresss:",
         name: "email",
     },
     {
         type: "input",
-        message: "Enter managers's office number",
-        name: "office",
+        message: "Enter managers's office number:",
+        name: "officeNumber",
     }
 ]
 
 const engineerQuestions = [
     {
         type: "input",
-        message: "Enter the engineer's name",
+        message: "Enter the engineer's name:",
         name: "name",
     },
     {
         type: "input",
-        message: "Enter the engineer's ID",
-        name: "ID",
+        message: "Enter the engineer's ID:",
+        name: "id",
+        validate: (answer) => {
+            if (isNaN(answer)) {
+              return "please enter a number";
+            }
+            return true;
+          },
     },
     {
         type: "input",
-        message: "Enter engineer's email addresss",
+        message: "Enter engineer's email addresss:",
         name: "email",
     },
     {
         type: "input",
-        message: "Enter engineer's GitHub username",
+        message: "Enter engineer's GitHub username:",
         name: "github",
     }
 ]
@@ -53,22 +69,28 @@ const engineerQuestions = [
 const internQuestions = [
     {
         type: "input",
-        message: "Enter the intern's name",
+        message: "Enter the intern's name:",
         name: "name",
     },
     {
         type: "input",
-        message: "Enter the intern's ID",
-        name: "ID",
+        message: "Enter the intern's ID:",
+        name: "id",
+        validate: (answer) => {
+            if (isNaN(answer)) {
+              return "please enter a number";
+            }
+            return true;
+          },
     },
     {
         type: "input",
-        message: "Enter intern's email addresss",
+        message: "Enter intern's email addresss:",
         name: "email",
     },
     {
         type: "input",
-        message: "Enter intern's school name",
+        message: "Enter intern's school name:",
         name: "school",
     }
 ]
@@ -92,14 +114,14 @@ function writeToFile(newFile, answers) {
 function init() {
     inquirer.prompt(managerQuestions)
         .then((managerData) => {
-            const manager = new manager(
+            const manager = new Manager(
                 managerData.name,
                 managerData.id,
                 managerData.email,
-                managerData.office
+                managerData.officeNumber
             );
-        generatedTeam.push(manager);
-        addTeam();
+            generatedTeam.push(manager);
+            addTeam();
     })
 }
 
@@ -113,6 +135,7 @@ function addTeam() {
                 case "Add an Intern":
                     return addIntern();
                 case "Done adding team members":
+                    console.log(generatedTeam);
                     return generateHTML(generatedTeam);
             } 
         })
@@ -122,31 +145,32 @@ function addTeam() {
 function addEngineer() {
     inquirer.prompt(engineerQuestions)
         .then((engineerData) => {
-            const engineer = new engineer(
+            const engineer = new Engineer(
                 engineerData.name,
                 engineerData.id,
                 engineerData.email,
                 engineerData.github
             );
-        generatedTeam.push(engineer)
-        addTeam();
+            generatedTeam.push(engineer)
+            addTeam();
         })
 }
 
 function addIntern() {
     inquirer.prompt(internQuestions)
         .then((internData) => {
-            const intern = new intern(
+            const intern = new Intern(
                 internData.name,
                 internData.id,
                 internData.email,
-                internData.github
+                internData.school
             );
-        generatedTeam.push(intern)
-        addTeam();
+            generatedTeam.push(intern)
+            addTeam();
         })
 }
 
 
 // Function call to initialize app
 init();
+
