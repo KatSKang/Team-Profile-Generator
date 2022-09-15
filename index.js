@@ -253,7 +253,7 @@ function generateHTML(cardHTML){
 
 // Function to write index.html
 function writeToFile(data) {
-    fs.writeFileSync('index.html', data, (err) => err ? console.error(err) : console.log('Successfully created index.html!!'));
+    fs.writeFileSync('./dist/index.html', data, (err) => err ? console.error(err) : console.log('Successfully created index.html!!'));
 }
 
 

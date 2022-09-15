@@ -28,8 +28,10 @@
   Then run `node index.js` to start the prompts.
   
   Click [here](https://youtu.be/kJqkM9ziMYU) for the video walkthough. 
-  
-  
+
+  ![Terminal Screenshot](/src/assets/img/prompt%20terminal.JPG)
+
+  ![Terminal Screenshot](/src/assets/img/cards.JPG)
 
   ## Credits
 
@@ -44,6 +46,8 @@
   Test scripts included with project.
   
   Run `npm test` in the terminal.
+
+  ![Terminal Screenshot](/src/assets/img/test%20terminal.JPG)
   
 
   ## Questions
