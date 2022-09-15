@@ -4,7 +4,7 @@
 
   ## Description
 
-  This app can be used to create profile cards for employees as a quick reference for their email, github and/or school.
+  This app can be used to create profile cards for employees as a quick reference for their name, ID, email, office, github and/or school.
 
   ## Table of Contents
 
@@ -17,10 +17,18 @@
 
   ## Installation
 
-  Node.js, inquirer, jest
+  Node.js, inquirer, jest (for tests)
 
   ## Usage
-
+  
+  Install node.js onto your computer.
+  
+  Run `npm i inquirer` in the terminal.
+  
+  Then run `node index.js` to start the prompts.
+  
+  Click [here](https://youtu.be/kJqkM9ziMYU) for the video walkthough. 
+  
   
 
   ## Credits
@@ -32,7 +40,10 @@
   Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
   ## Test
-
+  
+  Test scripts included with project.
+  
+  Run `npm test` in the terminal.
   
 
   ## Questions
