@@ -1,7 +1,57 @@
 
-// function generateHTML(createCards){
-//     return `
-// <!DOCTYPE html>
+// function generateHTML(data) {
+//     var cardHTML = '';
+//     for(let i = 0; i < teamData.length; i++)  {
+//         if (team[i].getRole() === 'Manager'){
+//             cardHTML += `
+//                 <div class="card m-3" style="width: 18rem">
+//                         <div class="card-header bg-primary text-white">
+//                             <h3>${team[i].getName()}</h3>
+//                             <span class="h5"><i class="bi bi-cup-hot-fill"></i> Manager</span>
+//                         </div>
+//                         <div class="card-body">
+//                             <ul class ="list-group">
+//                                 <li class="list-group-item">ID: ${team[i].getID()} </li>
+//                                 <li class="list-group-item">Email: ${team[i].getEmail()} </li>
+//                                 <li class="list-group-item">Office number: ${team[i].getOfficeNumber()}</li>
+//                             </ul>
+//                         </div>
+//                     </div>`
+//         } else if (team[i].getRole() === 'Engineer'){
+//             cardHTML += `
+//                 <div class="card m-3" style="width: 18rem">
+//                         <div class="card-header bg-primary text-white">
+//                             <h3>${team[i].getName()}</h3>
+//                             <span class="h5"><i class="bi bi-wrench-adjustable-circle"></i> Engineer</span>
+//                         </div>
+//                         <div class="card-body">
+//                             <ul class ="list-group">
+//                                 <li class="list-group-item">ID: ${team[i].getID()}</li>
+//                                 <li class="list-group-item">Email: ${team[i].getEmail()} </li>
+//                                 <li class="list-group-item">GitHub: ${team[i].getGitHub()} </li>
+//                             </ul>
+//                         </div>
+//                     </div>`
+//         } else if (team[i].getRole() === 'Intern'){
+//             cardHTML += `
+//                 <div class="card m-3" style="width: 18rem">
+//                         <div class="card-header bg-primary text-white">
+//                             <h3>${team[i].getName()} </h3>
+//                             <span class="h5"><i class="bi bi-wrench-adjustable-circle"></i> Engineer</span>
+//                         </div>
+//                         <div class="card-body">
+//                             <ul class ="list-group">
+//                                 <li class="list-group-item">ID: ${team[i].getID()} </li>
+//                                 <li class="list-group-item">Email: ${team[i].getEmail()} </li>
+//                                 <li class="list-group-item">School: ${team[i].getSchool()} </li>
+//                             </ul>
+//                         </div>
+//                     </div>`
+//         }
+//     };
+
+//    var indexHTML = `
+//     <!DOCTYPE html>
 //     <html lang="en">
 //     <head>
 //         <meta charset="UTF-8">
@@ -18,17 +68,16 @@
 //                 <h1 class="display-4 text-center  font-weight-bold">TEAM MEMBERS</h1>
 //             </div>
 //         </div>
-
 //         <div class="container">
 //             <div class="row justify-content-center" id="insert-cards">
-//                ${createCards()}
+//                ${cardHTML}
 //         </div>
-        
-    
 //     </body>
 //     </html>
 //     `
-// }
+//     console.log(cardHTML);
+//     return indexHTML;
+// };
 
 
-//module.exports = generateHTML;
+// module.exports = generateHTML;

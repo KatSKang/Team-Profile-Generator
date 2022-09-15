@@ -180,7 +180,7 @@ function createCards(team) {
                         <div class="card-body">
                             <ul class ="list-group">
                                 <li class="list-group-item">ID: ${team[i].getID()} </li>
-                                <li class="list-group-item">Email: ${team[i].getEmail()} </li>
+                                <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}"> ${team[i].getEmail()} </a> </li>
                                 <li class="list-group-item">Office number: ${team[i].getOfficeNumber()}</li>
                             </ul>
                         </div>
@@ -195,8 +195,8 @@ function createCards(team) {
                         <div class="card-body">
                             <ul class ="list-group">
                                 <li class="list-group-item">ID: ${team[i].getID()}</li>
-                                <li class="list-group-item">Email: ${team[i].getEmail()} </li>
-                                <li class="list-group-item">GitHub: ${team[i].getGitHub()} </li>
+                                <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}"> ${team[i].getEmail()} </a></li>
+                                <li class="list-group-item">GitHub:<a href="https://github.com/${team[i].getGitHub()}" target="_blank" class="card-link">${team[i].getGitHub()} </a></li>
                             </ul>
                         </div>
                     </div>`
@@ -205,12 +205,12 @@ function createCards(team) {
                 <div class="card m-3" style="width: 18rem">
                         <div class="card-header bg-primary text-white">
                             <h3>${team[i].getName()} </h3>
-                            <span class="h5"><i class="bi bi-wrench-adjustable-circle"></i> Engineer</span>
+                            <span class="h5"><i class="bi bi-mortarboard-fill"></i> Intern</span>
                         </div>
                         <div class="card-body">
                             <ul class ="list-group">
                                 <li class="list-group-item">ID: ${team[i].getID()} </li>
-                                <li class="list-group-item">Email: ${team[i].getEmail()} </li>
+                                <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}"> ${team[i].getEmail()} </a></li>
                                 <li class="list-group-item">School: ${team[i].getSchool()} </li>
                             </ul>
                         </div>
